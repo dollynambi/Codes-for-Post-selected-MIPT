@@ -3,6 +3,20 @@
 
 This folder contains sub-folders corresponding to computing different entanglement measures for computing various critical exponents. The sub folders are as follows:
 
+## `Bulk exponent`
+This folder contains the files:
+ -  `HaarRandomCircuitAncilla.jl` :
+     Contains all the functions relevant for running the circuit and computing the ancilla entropy.
+ -  `bulk_critical_exponent.jl` :
+     Code to run the simulation and compute the local order parameter (entropy of the ancilla entangled into the bulk) for each time step till t = 16L for different system sizes and measurement rates.
+    
+### Running the code
+To run the code all the files in `Bulk exponent` should be in the same directory, then it can be run by 
+```bash
+julia bulk_critical_exponent.jl Arg1 Arg2 Arg3
+```
+## `Free energy`
+
 ## `tmi_p`
 This folder contains the files:
  -  `HaarRandomCircuit.jl` :
