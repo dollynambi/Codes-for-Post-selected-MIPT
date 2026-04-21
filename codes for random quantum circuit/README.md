@@ -167,6 +167,34 @@ where:
 
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
+## spatial_correlation
+This folder contains the files:
+- `HaarRandomCircuitAncilla.jl` : Has the functions to run the quantum circuit entangled with two ancillas.
+- `spatial_correlation.jl` : Runs the circuit using the functions in `HaarRandomCircuitAncilla.jl` where the ancillas entangled to bulk of the circuit to two different qubits at the same time.
+
+### Running the code
+To compute the spatial correlation all the files in `spatial_correlation` should be in the same directory.
+
+```bash
+julia spatial_correlation.jl Arg1 Arg2 Arg3
+```  
+**Arguments:**
+- `Arg1` (`p`, Float64): Measurement rate within 0 to 1.
+- `Arg2` (`L`, Int): Number of qubits (system size).
+- `Arg3` (`seed`, Int): Random seed for reproducibility.
+
+### Output files
+
+The `spatial_correlation.jl` generates a CSV file of the form:
+
+`spatial_correlation_$(p)_$(L)_$(r).csv`
+
+where:
+- `$(p)` = measurement rate  
+- `$(L)` = system size (number of qubits)  
+- `$(r)` = random seed
+
+The headers are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
 ## `Free energy`
 This folder contains the files:
@@ -205,6 +233,8 @@ where:
 - `$(r)` = random seed
 
 The headers for `temporal_correlation_$(p)_$(L)_$(r).csv` are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
+
+
 
 
 
