@@ -45,5 +45,7 @@ function run_periodic(p::Float64,L::Int64)
     HaarRandomCircuitAncilla.full_evolution_ancilla!(ψ,8T,p,num_q,s)  
     return s
 end
-
-main(0.1,8,1)
+p = parse(Float64,ARGS[1])
+L = parse(Int,ARGS[2])
+r = parse(Int,ARGS[3])
+main(p,L,r)
