@@ -24,7 +24,7 @@ julia mutualInformationHaar.jl Arg1 Arg2 Arg3
 The code generates CSV files of the form:
 
 - `tmi_$(p)_$(L)_$(r)_<tag>.csv` - Tripartite mutual information
-- `sab_$(p)_$(L)_$(r)_<tag>.csv` - Tripartite mutual information
+- `sab_$(p)_$(L)_$(r)_<tag>.csv` - Half-cut entropy
 where:
 - `$(p)` = measurement rate  
 - `$(L)` = system size (number of qubits)  
@@ -36,15 +36,15 @@ The `<tag>` indicates the time at which the ancilla entropy is computed:
 
 The headers for these files are  S0 (Hartley entropy), S1 (von Neumann entropy) , S2 (2nd order Renyi entropy), S3 (3nd order Renyi entropy) and Sinf (infinite-order (min) Renyi entropy).
 
-## `tmi_p`
+## `tmi_t`
 This folder contains the files:
  -  `HaarRandomCircuit.jl` :
      Contains all the functions relevant for running the circuit and computing the half-cut entropy and the tripartite mutual information.
  -  `mutualInformationHaar.jl` :
-     Script to run the simulation and compute the half-cut entropy and the tripartite mutual information at time t = 2L,  and t =4L for different system sizes and measurement rates.
+     Code to run the simulation and compute the entropies of the different partitions and the tripartite mutual information at time step till t = 4L for different system sizes and measurement rates.
     
 ### Running the code
-To run the code all the files in `tmi_p` should be in the same directory, then it can be run by 
+To run the code all the files in `tmi_t` should be in the same directory, then it can be run by 
 ```bash
 julia mutualInformationHaar.jl Arg1 Arg2 Arg3
 ```
@@ -56,16 +56,21 @@ julia mutualInformationHaar.jl Arg1 Arg2 Arg3
 ### Output files
 The code generates CSV files of the form:
 
-- `tmi_$(p)_$(L)_$(r)_<tag>.csv` - Tripartite mutual information
-- `sab_$(p)_$(L)_$(r)_<tag>.csv` - Tripartite mutual information
+- `tmi_$(p)_$(L)_$(r).csv` - Tripartite mutual information
+- `s<tag>_$(p)_$(L)_$(r).csv` - von Neumann entropy of the density matrix corresponding part `<tag>`
 where:
 - `$(p)` = measurement rate  
 - `$(L)` = system size (number of qubits)  
 - `$(r)` = random seed  
-The `<tag>` indicates the time at which the ancilla entropy is computed:
+The `<tag>` indicates the partition
 
-- `L`     → \(t = 2L\)  
-- `2L`    → \(t = 4L\)
+- `a`     → A and the rest (BCD)  
+- `b`    → B and the rest (ACD)
+- `c`    → C and the rest (ABD)
+- `abc`    → D and the rest (ABC)
+- `ab`    → AB and the rest (CD)
+- `bc`    → BC and the rest (AD)
+- `ac`    → AC and the rest (BD)
 
 The headers for these files are  S0 (Hartley entropy), S1 (von Neumann entropy) , S2 (2nd order Renyi entropy), S3 (3nd order Renyi entropy) and Sinf (infinite-order (min) Renyi entropy).
 
