@@ -32,7 +32,6 @@ where:
 
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
-## `Free energy`
 
 ## `tmi_p`
 This folder contains the files:
@@ -168,6 +167,44 @@ where:
 
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
+
+## `Free energy`
+This folder contains the files:
+- `HaarRandomCircuit.jl` : Has the functions to run the quantum circuit.
+- `FreeEnergy.jl` : Runs the circuit using the functions in  `HaarRandomCircuit.jl` and computes the free energy.
+- `HaarRandomCircuitAncilla.jl` : Has the functions to run the quantum circuit entangled with two ancillas.
+- `temporal_correlation.jl` : Runs the circuit using the functions in `HaarRandomCircuitAncilla.jl` where the ancillas entangled to bulk of the circuit at two different times.
+
+### Running the code 
+- To compute the free energy, both `HaarRandomCircuit.jl` and `FreeEnergy.jl` should be in the same directory, then it can be run by 
+```bash
+julia FreeEnergy.jl Arg1 Arg2 Arg3
+```  
+- To compute the temporal correlation, both `HaarRandomCircuitAncilla.jl` and `temporal_correlation.jl` should be in the sam directory, then it can be run by
+
+```bash
+julia temporal_correlation.jl Arg1 Arg2 Arg3
+```  
+**Arguments:**
+- `Arg1` (`p`, Float64): Measurement rate within 0 to 1.
+- `Arg2` (`L`, Int): Number of qubits (system size).
+- `Arg3` (`seed`, Int): Random seed for reproducibility.
+
+### Output files
+The `FreeEnergy.jl` generates a CSV file of the form:
+
+`logp_$(p)_$(L)_$(r).csv`
+
+The `temporal_correlation.jl` generates a CSV file of the form:
+
+`temporal_correlation_$(p)_$(L)_$(r).csv`
+
+where:
+- `$(p)` = measurement rate  
+- `$(L)` = system size (number of qubits)  
+- `$(r)` = random seed
+
+The headers for `temporal_correlation_$(p)_$(L)_$(r).csv` are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
 
 
