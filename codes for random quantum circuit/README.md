@@ -1,9 +1,23 @@
 
-# How to run the codes for the post-selected random quantum circuits
+# How to run the codes for the post-selected random quantum circuits ?
+
+**Environment**
+
+The code was developed and tested with:
+
+- Julia version: 1.11.1
+
+Required packages
+
+- LinearAlgebra
+- Random 
+- Combinatorics
+- CSV
+- DataFrames
 
 This folder contains sub-folders corresponding to computing different entanglement measures for computing various critical exponents. The sub folders are as follows:
 
-## `Bulk exponent`
+## `Bulk exponent`-  local order parameter exponent $\beta$
 This folder contains the files:
  -  `HaarRandomCircuitAncilla.jl` :
      Contains all the functions relevant for running the circuit and computing the ancilla entropy.
@@ -33,7 +47,7 @@ where:
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
 
-## `tmi_p`
+## `tmi_p` - Critical point $p_c$ and correlation length exponent $\nu$ of the entanglement transition
 This folder contains the files:
  -  `HaarRandomCircuit.jl` :
      Contains all the functions relevant for running the circuit and computing the half-cut entropy and the tripartite mutual information.
@@ -66,7 +80,7 @@ The `<tag>` indicates the time at which the ancilla entropy is computed:
 
 The headers for these files are  S0 (Hartley entropy), S1 (von Neumann entropy) , S2 (2nd order Renyi entropy), S3 (3nd order Renyi entropy) and Sinf (infinite-order (min) Renyi entropy).
 
-## `tmi_t`
+## `tmi_t` - Computing the coeffecients $\alpha_n$ ($S_n \sim \alpha_n log L$) of the Renyi entropy $S_n$ 
 This folder contains the files:
  -  `HaarRandomCircuit.jl` :
      Contains all the functions relevant for running the circuit and computing the half-cut entropy and the tripartite mutual information.
@@ -104,7 +118,7 @@ The `<tag>` indicates the partition
 
 The headers for these files are  S0 (Hartley entropy), S1 (von Neumann entropy) , S2 (2nd order Renyi entropy), S3 (3nd order Renyi entropy) and Sinf (infinite-order (min) Renyi entropy).
 
-## `ancilla_p`
+## `ancilla_p` - Critical point $p_c$ and correlation length exponent $\nu$ of the purification transition
 This folder contains the files:
  -  `HaarRandomCircuitAncilla.jl` :
      Contains all the functions relevant for running the circuit and computing the ancilla entropy.
@@ -139,7 +153,7 @@ The `<tag>` indicates the time at which the ancilla entropy is computed:
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy) 
 
 
-## `ancilla_t`
+## `ancilla_t`- Computing the dynamical exponent $z$ of the purification transition
 This folder contains the files:
  -  `HaarRandomCircuitAncilla.jl` :
      Contains all the functions relevant for running the circuit and computing the ancilla entropy.
@@ -167,7 +181,7 @@ where:
 
 The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
-## spatial_correlation
+## spatial_correlation - Computing the spatial correlation length exponent, $\eta$
 This folder contains the files:
 - `HaarRandomCircuitAncilla.jl` : Has the functions to run the quantum circuit entangled with two ancillas.
 - `spatial_correlation.jl` : Runs the circuit using the functions in `HaarRandomCircuitAncilla.jl` where the ancillas entangled to bulk of the circuit to two different qubits at the same time.
@@ -196,7 +210,7 @@ where:
 
 The headers are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
 
-## `Free energy`
+## `Free energy` - Computing the effective central charge $c_{eff}$ and the anisotropy factor $v$
 This folder contains the files:
 - `HaarRandomCircuit.jl` : Has the functions to run the quantum circuit.
 - `FreeEnergy.jl` : Runs the circuit using the functions in  `HaarRandomCircuit.jl` and computes the free energy.
