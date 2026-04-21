@@ -15,6 +15,23 @@ To run the code all the files in `Bulk exponent` should be in the same directory
 ```bash
 julia bulk_critical_exponent.jl Arg1 Arg2 Arg3
 ```
+
+**Arguments:**
+- `Arg1` (`p`, Float64): Measurement rate within 0 to 1.
+- `Arg2` (`L`, Int): Number of qubits (system size).
+- `Arg3` (`r`, Int): Random seed for reproducibility.
+
+### Output files
+The code generates a CSV file of the form:
+
+`bulk_ancilla_$(p)_$(L)_$(r).csv`
+where:
+- `$(p)` = measurement rate  
+- `$(L)` = system size (number of qubits)  
+- `$(r)` = random seed
+
+The headers for these files are s1 (von Neumann entropy of the ancilla) , s2 (2nd order Renyi entropy of the ancilla), s3 (3nd order Renyi entropy of the ancilla) and sinf (infinite-order (min) Renyi entropy).
+
 ## `Free energy`
 
 ## `tmi_p`
