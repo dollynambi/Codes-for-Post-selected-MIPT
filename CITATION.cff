@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Codes for Post-selected Criticality in Measurement-induced Phase Transitions"
+authors:
+  - family-names: Nambi
+    given-names: Dolly
+    orcid: "https://orcid.org/0009-0009-0100-0508"
+  - family-names: Khanna
+    given-names: Kabir
+    orcid: "https://orcid.org/0000-0001-9400-1597"
+  - family-names: Allocca
+    given-names: Andrew
+    orcid: "https://orcid.org/0000-0003-3236-5445"
+  - family-names: Iadecola
+    given-names: Thomas
+    orcid: "https://orcid.org/0000-0002-5145-6441"
+  - family-names: Hickey
+    given-names: Ciaran
+    orcid: "https://orcid.org/0000-0001-7333-4237"
+  - family-names: Vasseur
+    given-names: Romain
+    orcid: "https://orcid.org/0000-0002-4636-4139"
+  - family-names: Wilson
+    given-names: Justin H.
+    orcid: "https://orcid.org/0000-0001-6903-0417"
+version: v1.0
+date-released: 2026-04-22
